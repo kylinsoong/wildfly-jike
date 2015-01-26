@@ -1,0 +1,7 @@
+/subsystem=logging/size-rotating-file-handler=wildfly-jike-srfh:add(level=DEBUG, file={"relative-to"=>"jboss.server.log.dir", "path"=>"wildfly-jike-srfh.log"}, append=false, autoflush=true, rotate-size=1k, max-backup-index=5)
+
+/subsystem=logging/logger=com.jikexueyuan.wildfly:add-handler(name=wildfly-jike-srfh)
+
+/subsystem=logging/size-rotating-file-handler=wildfly-jike-srfh:read-resource(include-runtime=true)
+
+:reload()

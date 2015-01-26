@@ -1,0 +1,7 @@
+/subsystem=logging/periodic-rotating-file-handler=wildfly-jike-prfh:add(level=DEBUG, file={"relative-to"=>"jboss.server.log.dir", "path"=>"wildfly-jike-prfh.log"}, append=false, autoflush=true, suffix=".yyyy-MM-dd-HH-mm")
+
+/subsystem=logging/logger=com.jikexueyuan.wildfly:add-handler(name=wildfly-jike-prfh)
+
+/subsystem=logging/periodic-rotating-file-handler=wildfly-jike-prfh:read-resource(include-runtime=true)
+
+:reload()

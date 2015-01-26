@@ -1,0 +1,4 @@
+/system-property=foo:remove
+/system-property=bar:remove
+/system-property=foo:add(value=foo)
+/system-property=bar:add(value=bar)

@@ -1,0 +1,7 @@
+/subsystem=logging/file-handler=wildfly-jike-fh:add(level=DEBUG, file={"relative-to"=>"jboss.server.log.dir", "path"=>"wildfly-jike-fh.log"}, append=false, autoflush=true)
+
+/subsystem=logging/logger=com.jikexueyuan.wildfly:add(use-parent-handlers=false, level=DEBUG, handlers=["wildfly-jike-fh"])
+
+/subsystem=logging/file-handler=wildfly-jike-fh:read-resource(include-runtime=true)
+
+:reload()

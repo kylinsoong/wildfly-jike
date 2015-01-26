@@ -1,0 +1,9 @@
+module add --name=com.h2 --resources=h2-1.3.173.jar --dependencies=javax.api,javax.transaction.api
+
+/subsystem=datasources/jdbc-driver=h2-driver:add(driver-name=h2-driver,driver-module-name=com.h2, driver-xa-datasource-class-name=org.h2.jdbcx.JdbcDataSource)
+
+/subsystem=datasources/jdbc-driver=h2-driver:read-resource
+
+/subsystem=datasources/data-source=MyH2DS:add(jndi-name="java:jboss/datasources/MyH2DS",connection-url="jdbc:h2:mem:test-h2;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE",driver-name=h2-driver,user-name=sa,password=sa)
+
+/subsystem=datasources/data-source=MyH2DS:read-resource
